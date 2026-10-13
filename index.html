@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Dashboard interactif sur la résistance aux antibiotiques : données OMS GLASS 2025 et étude GRAM / The Lancet.">
+<title>Quand les antibiotiques ne marchent plus</title>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Quand les antibiotiques ne marchent plus</h1>
+<p class="sub">La résistance aux antibiotiques tue déjà plus d'un million de personnes par an. Choisissez une région : chaque point est une infection, en rose celles que le traitement ne soigne plus.</p>
+
+<section class="hero" aria-live="polite">
+  <svg id="dish" viewBox="0 0 340 340" role="img" aria-label="Boîte de Petri : infections résistantes en rose"></svg>
+  <div>
+    <div class="big" id="big"></div>
+    <p class="lead" id="lead"></p>
+    <div class="btns" id="btns"></div>
+    <div class="legend"><i></i>sensible<i class="r"></i>résistante</div>
+  </div>
+</section>
+
+<section class="grid">
+  <div class="card"><h2>Selon le type d'infection</h2><p class="sub" style="margin:0">Part des infections résistantes, médiane mondiale, 2023.</p><div id="inf"></div></div>
+  <div class="card"><h2>Les bactéries les plus redoutées</h2><p class="sub" style="margin:0">Résistance à l'antibiotique de première intention.</p><div id="bug"></div></div>
+</section>
+
+<section class="card" style="margin-top:12px">
+  <h2>Les décès, hier et demain</h2>
+  <p class="sub" style="margin:0 0 10px">Millions de décès par an : estimation 2021 et projection 2050 si rien ne change.</p>
+  <div class="btns" id="dbtn"></div>
+  <div id="dth"></div>
+</section>
+
+<section class="card" style="margin-top:12px">
+  <h2>La carte, pays par pays</h2>
+  <p class="sub" style="margin:0 0 6px">Part des infections du sang à <i>E. coli</i> résistantes aux céphalosporines de 3e génération. Plus le rose est foncé, plus la résistance est élevée. Cliquez sur un pays.</p>
+  <label for="my" class="yl">Année : <b id="yv"></b></label><input id="my" type="range">
+  <div class="mapwrap"><svg id="map" viewBox="0 0 960 500" role="img" aria-label="Carte du monde de la résistance d'E. coli"></svg></div>
+  <div class="mgrid"><div id="pn" class="pn"></div><div><h3>Les plus touchés</h3><div id="top"></div></div><div><h3>Les moins touchés</h3><div id="low"></div></div></div>
+</section>
+
+<section class="stats">
+  <div class="card stat"><b>39 M</b><span>de décès directement dus à la résistance entre 2025 et 2050 (169 M en comptant les décès où elle joue un rôle)</span></div>
+  <div class="card stat"><b>11,8 M</b><span>de ces décès en Asie du Sud, la région la plus touchée</span></div>
+  <div class="card stat"><b>×2</b><span>décès par MRSA doublés entre 1990 et 2021</span></div>
+</section>
+
+<p class="src">Sources : OMS, <i>Global antibiotic resistance surveillance report 2025</i> (GLASS, 104 pays, données 2023) ; GRAM Project, <i>The Lancet</i>, 2024 (204 pays, 1990-2021, projections 2050). Carte : OMS GLASS traité par Our World in Data (<i>E. coli</i>, infections du sang, 2018-2022) ; seuls les pays ayant déclaré des données sont colorés, et les petits échantillons peuvent afficher 0 % ou 100 %. Statistiques de santé publique : ce n'est pas un outil de diagnostic ni un conseil médical.</p>
+</main>
+<script src="data.js"></script>
+<script src="geo.js"></script>
+<script src="app.js"></script>
+<script src="map.js"></script>
+</body>
+</html>
