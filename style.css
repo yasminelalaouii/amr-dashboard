@@ -1,6 +1,6 @@
-:root{--bg:#E8F0ED;--panel:#fff;--ink:#10302B;--mute:#547069;--line:#CBDAD5;--ok:#3AA797;--res:#D6246E;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1B18;--panel:#12292A;--ink:#E4F2EE;--mute:#8FB0A8;--line:#234542;--ok:#4CC2B0;--res:#FF4D8D}}
-:root[data-theme="dark"]{--bg:#0B1B18;--panel:#12292A;--ink:#E4F2EE;--mute:#8FB0A8;--line:#234542;--ok:#4CC2B0;--res:#FF4D8D}
+:root{--bg:#E8F0ED;--panel:#fff;--ink:#10302B;--mute:#547069;--line:#CBDAD5;--ok:#3AA797;--res:#D6246E;--c2:#2F5BFF;--c3:#E39A00;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1B18;--panel:#12292A;--ink:#E4F2EE;--mute:#8FB0A8;--line:#234542;--ok:#4CC2B0;--res:#FF4D8D;--c2:#7C97FF;--c3:#FFC83D}}
+:root[data-theme="dark"]{--bg:#0B1B18;--panel:#12292A;--ink:#E4F2EE;--mute:#8FB0A8;--line:#234542;--ok:#4CC2B0;--res:#FF4D8D;--c2:#7C97FF;--c3:#FFC83D}
 *{box-sizing:border-box}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Familjen Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -41,11 +41,36 @@ button:focus-visible{outline:3px solid var(--res);outline-offset:2px}
 #map path.on{stroke:var(--ink);stroke-width:1.8}
 .yl{display:block;margin:8px 0 2px}
 #my{width:100%;accent-color:var(--res)}
-.mgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:16px;margin-top:14px}
 .mgrid h3{margin:0 0 8px;font-size:16px}
 .rk{display:flex;justify-content:space-between;width:100%;border-radius:10px;margin:0 0 6px;padding:6px 12px;text-align:left}
 .pn h3{margin:0;font-size:22px}
-.pv{font-size:44px;font-weight:700;letter-spacing:-.04em;color:var(--res)}
 .pn p{margin:0 0 8px;color:var(--mute);font-size:14px}
 .pn svg{width:100%;max-width:320px}
-@media(max-width:760px){.mgrid{grid-template-columns:1fr}}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+#lang{flex:none;margin-top:6px}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
+.leg{display:flex;flex-wrap:wrap;gap:6px 22px;margin:10px 0 4px}
+.leg div{display:flex;align-items:baseline;gap:8px}
+.leg i{width:12px;height:12px;border-radius:50%;display:inline-block;align-self:center}
+.pv{font-size:28px;font-weight:700;letter-spacing:-.03em}
+.shade{margin:10px 0 0}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:14px 0}
+.wc{border:1px solid var(--line);border-radius:12px;padding:14px}
+.wc h3{margin:0 0 6px;font-size:16px}
+.wc p{margin:0;color:var(--mute);font-size:14px}
+.zr{grid-template-columns:230px 1fr 90px}
+#scat{width:100%;min-width:520px;height:auto}
+#scat text{fill:var(--mute);font:12px "Familjen Grotesk",system-ui,sans-serif}
+#scat text.lb{fill:var(--ink)}
+.zl{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--mute);margin:8px 0}
+.zl i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
+h3.sec{margin:22px 0 4px;font-size:18px}
+@media(max-width:760px){.mgrid{grid-template-columns:1fr}.zr{grid-template-columns:120px 1fr 80px}}
+.brief{margin:0 0 12px}
+.sc{margin:16px 0 6px;font-size:15px}
+#brief .stat b{font-size:30px}
+@media(min-width:761px){.brief{grid-template-columns:repeat(4,1fr)}}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.tabs button[aria-selected=true]{background:var(--ink);color:var(--bg)}
+.tab[hidden]{display:none}
+.tag{display:inline-block;font-size:12px;color:var(--mute);border:1px solid var(--line);border-radius:99px;padding:1px 10px;margin:2px 0 8px}
