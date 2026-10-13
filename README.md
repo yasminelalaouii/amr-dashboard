@@ -1,4 +1,4 @@
-# 🧫 When Antibiotics Stop Working
+# When Antibiotics Stop Working
 
 An interactive, bilingual (FR/EN) dashboard on **antibiotic resistance (AMR)**, built on real public data from the WHO and *The Lancet*.
 Plain HTML, CSS and JavaScript: no framework, no runtime dependencies, no build step to view the site.
